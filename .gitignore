@@ -1,0 +1,43 @@
+# Xcode
+DerivedData/
+build/
+*.xcworkspace
+!default.xcworkspace
+xcuserdata/
+*.xcuserstate
+
+# SwiftPM
+.build/
+Packages/
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/Build/
+
+# Swift Package resolved
+Package.resolved
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# Personal Xcode data
+*.xcuserdatad
+
+# Archives
+*.xcarchive
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Swift Package Manager
+.swiftpm/xcode/package.xcworkspace
+
+# Other
+*.DS_Store
