@@ -12,3 +12,5 @@ protocol UsersInteractorProtocol {
     
 }
 
+extension CoreInteractor: UsersInteractorProtocol {}
+

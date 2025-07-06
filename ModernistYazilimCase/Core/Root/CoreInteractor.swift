@@ -9,7 +9,7 @@ import Foundation
 
 @MainActor
 struct CoreInteractor {
-    
+    //MARK: - TODO: Define Managers on Here
+    init(container: DependencyContainer) {
+    }
 }
-
-extension CoreInteractor: UsersInteractorProtocol {}
