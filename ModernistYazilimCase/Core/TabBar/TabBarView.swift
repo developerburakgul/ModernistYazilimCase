@@ -9,10 +9,16 @@ import SwiftUI
 
 struct TabBarView: View {
     @State var selectedTab: Tabs = . users
+    @EnvironmentObject var container: DependencyContainer
+    
     var body: some View {
         TabView(selection: $selectedTab){
             
-            UsersView()
+            UsersView(
+                viewModel:
+                    ViewModelFactory(container: container)
+                    .makeUsersViewModel()
+            )
                 .tabItem {
                     Label(
                         Tabs.users.title,
@@ -21,7 +27,11 @@ struct TabBarView: View {
                 }
                 .tag(Tabs.users)
             
-            FavoritesView()
+            FavoritesView(
+                viewModel:
+                    ViewModelFactory(container: container)
+                    .makeFavoritesViewModel()
+            )
                 .tabItem {
                     Label(
                         Tabs.favorites.title,
@@ -36,4 +46,5 @@ struct TabBarView: View {
 
 #Preview {
     TabBarView()
+        .previewEnvironment()
 }

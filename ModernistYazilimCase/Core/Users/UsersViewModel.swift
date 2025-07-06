@@ -12,7 +12,17 @@ import Foundation
 final class UsersViewModel: ObservableObject {
     private let interactor: UsersInteractorProtocol
     
+    @Published private(set) var state: LoadingState<String> = .idle
+    
     init(interactor: UsersInteractorProtocol) {
         self.interactor = interactor
+    }
+    
+    func loadData() {
+        state = .loading
+        Task {
+            try await Task.sleep(nanoseconds: 2_000_000_000)
+            state = .loaded("Veri Geldi")
+        }
     }
 }

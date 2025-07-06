@@ -14,9 +14,9 @@ protocol ViewModelFactoryProtocol {
     func makeFavoritesViewModel() -> FavoritesViewModel
 }
 
+@MainActor
 struct ViewModelFactory: ViewModelFactoryProtocol {
     private let coreInteractor: CoreInteractor
-    
     init(container: DependencyContainer) {
         self.coreInteractor = CoreInteractor(container: container)
     }
