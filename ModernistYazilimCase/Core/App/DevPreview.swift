@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-
+import MBWebService
 
 
 @MainActor
@@ -16,13 +16,23 @@ class DevPreview {
     
     var container: DependencyContainer {
         let container = DependencyContainer()
+        container.register(MBWebServiceProtocol.self, service: webService)
+        container.register(UserManagerProtocol.self, service: userManager)
         return container
     }
-    init (){}
+    let webService: MBWebServiceProtocol
+    let userManager: UserManagerProtocol
+    
+    init(){
+        self.webService = MBWebService.shared
+        self.userManager = MockUserManager(webService: webService)
+    }
 }
 
 extension View {
     func previewEnvironment() -> some View {
-        self.environmentObject(DevPreview.shared.container)
+        self
+            .environmentObject(DevPreview.shared.container)
+//            .environmentObject(MockUserManager(webService: MBWebService.shared))
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 
 @MainActor
-class DependencyContainer: ObservableObject {
+final class DependencyContainer: ObservableObject {
     private var services: [String: Any] = [:]
     
     func register<T>(_ type: T.Type, service: T) {

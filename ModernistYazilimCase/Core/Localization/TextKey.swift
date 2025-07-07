@@ -11,6 +11,7 @@ import Foundation
 enum TextKey: LocalizedStringResource {
     case users = "users"
     case favorites = "favorites"
+    case enterNameForSearchText = "Enter name for search..."
     
     var stringValue: String {
         return self.rawValue.stringValue

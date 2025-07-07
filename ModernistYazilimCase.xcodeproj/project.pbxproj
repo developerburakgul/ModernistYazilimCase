@@ -6,13 +6,41 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		239315FC2E1C494F00D9E033 /* MBWebService in Frameworks */ = {isa = PBXBuildFile; productRef = 239315FB2E1C494F00D9E033 /* MBWebService */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		23F5ADDD2E169D6E00DC6DFA /* ModernistYazilimCase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModernistYazilimCase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		23932A6D2E1C58C900D9E033 /* Exceptions for "ModernistYazilimCase" folder in "ModernistYazilimCase" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Services/Users/Models/Mocks/MockUsers.json,
+			);
+			target = 23F5ADDC2E169D6E00DC6DFA /* ModernistYazilimCase */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		23932A6E2E1C58C900D9E033 /* Exceptions for "ModernistYazilimCase" folder in "Compile Sources" phase from "ModernistYazilimCase" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 23F5ADD92E169D6E00DC6DFA /* Sources */;
+			membershipExceptions = (
+				Services/Users/Models/Mocks/MockUsers.json,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		23F5ADDF2E169D6E00DC6DFA /* ModernistYazilimCase */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				23932A6D2E1C58C900D9E033 /* Exceptions for "ModernistYazilimCase" folder in "ModernistYazilimCase" target */,
+				23932A6E2E1C58C900D9E033 /* Exceptions for "ModernistYazilimCase" folder in "Compile Sources" phase from "ModernistYazilimCase" target */,
+			);
 			path = ModernistYazilimCase;
 			sourceTree = "<group>";
 		};
@@ -23,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				239315FC2E1C494F00D9E033 /* MBWebService in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +94,7 @@
 			);
 			name = ModernistYazilimCase;
 			packageProductDependencies = (
+				239315FB2E1C494F00D9E033 /* MBWebService */,
 			);
 			productName = ModernistYazilimCase;
 			productReference = 23F5ADDD2E169D6E00DC6DFA /* ModernistYazilimCase.app */;
@@ -94,6 +124,9 @@
 			);
 			mainGroup = 23F5ADD42E169D6E00DC6DFA;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				239315FA2E1C494F00D9E033 /* XCRemoteSwiftPackageReference "MBWebService" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 23F5ADDE2E169D6E00DC6DFA /* Products */;
 			projectDirPath = "";
@@ -326,6 +359,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		239315FA2E1C494F00D9E033 /* XCRemoteSwiftPackageReference "MBWebService" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/developerburakgul/MBWebService";
+			requirement = {
+				branch = development;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		239315FB2E1C494F00D9E033 /* MBWebService */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 239315FA2E1C494F00D9E033 /* XCRemoteSwiftPackageReference "MBWebService" */;
+			productName = MBWebService;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 23F5ADD52E169D6E00DC6DFA /* Project object */;
 }

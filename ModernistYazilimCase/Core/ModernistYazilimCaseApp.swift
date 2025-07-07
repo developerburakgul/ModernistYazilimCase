@@ -20,8 +20,9 @@ struct ModernistYazilimCaseApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabBarView()
         }
+        .environmentObject(appDelegate.dependencies.container)
     }
 }
 
