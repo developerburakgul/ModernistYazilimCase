@@ -6,4 +6,9 @@
 //
 
 import Foundation
-
+import MapKit
+extension String {
+    func convertToCLLocationDegrees() -> CLLocationDegrees? {
+        CLLocationDegrees(self)
+    }
+}

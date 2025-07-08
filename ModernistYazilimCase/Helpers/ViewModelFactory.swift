@@ -12,6 +12,7 @@ import Foundation
 protocol ViewModelFactoryProtocol {
     func makeUsersViewModel() -> UsersViewModel
     func makeFavoritesViewModel() -> FavoritesViewModel
+    func makeUserDetailViewModel(user: User) -> UserDetailViewModel
 }
 
 @MainActor
@@ -25,5 +26,9 @@ struct ViewModelFactory: ViewModelFactoryProtocol {
     }
     func makeFavoritesViewModel() -> FavoritesViewModel {
         FavoritesViewModel(interactor: coreInteractor as FavoritesInteractorProtocol)
+    }
+    
+    func makeUserDetailViewModel(user: User) -> UserDetailViewModel {
+        UserDetailViewModel(interactor: coreInteractor as UserDetailInteractorProtocol, user: user)
     }
 }

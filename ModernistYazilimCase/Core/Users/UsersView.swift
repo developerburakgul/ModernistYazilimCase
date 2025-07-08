@@ -45,7 +45,8 @@ struct UsersView: View {
     func makeView(from users: [User]) -> some View {
         ScrollView {
             ForEach(users, id: \.id) { user in
-                Text(user.name)
+                UserCellView(user: user)
+                    .padding(4)
             }
         }
     }
