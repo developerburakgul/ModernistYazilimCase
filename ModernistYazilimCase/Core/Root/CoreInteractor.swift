@@ -20,6 +20,14 @@ struct CoreInteractor {
     func fetchUsers() async throws -> [User] {
         try await userManager.fetchUsers()
     }
+    
+    func addFavoriteUser(_ user: User) {
+            
+    }
+    
+    func deleteFavoriteUser(_ user: User) {
+        
+    }
 }
 
 

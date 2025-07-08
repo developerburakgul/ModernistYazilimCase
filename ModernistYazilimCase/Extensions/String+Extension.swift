@@ -7,8 +7,15 @@
 
 import Foundation
 import MapKit
+
 extension String {
     func convertToCLLocationDegrees() -> CLLocationDegrees? {
-        CLLocationDegrees(self)
+        // String'i Double'a çevir, bölgesel ayarları dikkate al
+        let formatter = NumberFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX") // Nokta (.) için standart format
+        if let number = formatter.number(from: self) {
+            return CLLocationDegrees(number.doubleValue)
+        }
+        return nil
     }
 }

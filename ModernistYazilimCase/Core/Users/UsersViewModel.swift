@@ -45,4 +45,16 @@ final class UsersViewModel: ObservableObject {
         let filteredUsers = users.filter { $0.name.lowercased().contains(text.lowercased()) }
         state = .loaded(filteredUsers)
     }
+    
+    func addFavorites(user: User) {
+        interactor.addFavoriteUser(user)
+    }
+    
+    func deleteFavorites(user: User) {
+        interactor.deleteFavoriteUser(user)
+    }
+    
+    func isFavoriteUser(_ user: User) -> Bool {
+        Bool.random()
+    }
 }

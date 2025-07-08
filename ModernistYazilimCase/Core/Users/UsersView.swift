@@ -11,6 +11,7 @@ struct UsersView: View {
     @StateObject var viewModel: UsersViewModel
     @EnvironmentObject var container: DependencyContainer
     @State var searchQuery: String = ""
+    
     var body: some View {
         NavigationStack {
             mainContent
@@ -29,7 +30,8 @@ struct UsersView: View {
                 .navigationDestination(item: $viewModel.selectedUser) { user in
                     let viewModelFactory = ViewModelFactory(container: container)
                     UserDetailView(viewModel: viewModelFactory.makeUserDetailViewModel(user: user))
-
+                        .toolbarVisibility(.hidden, for: .tabBar)
+                        .toolbarBackgroundVisibility(.hidden, for: .navigationBar)
                 }
         }
     }
@@ -49,15 +51,39 @@ struct UsersView: View {
     }
     
     func makeView(from users: [User]) -> some View {
-        ScrollView {
+        List {
             ForEach(users, id: \.id) { user in
                 UserCellView(user: user)
-                    .padding(4)
+                    .padding(.vertical, 4)
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
                     .onTapGesture {
                         viewModel.selectedUser = user
                     }
+                    .swipeActions(edge: .leading, allowsFullSwipe: false) {
+                        Button {
+                            viewModel.addFavorites(user: user)
+                        } label: {
+                            Label("", systemImage: "heart")
+                            .labelStyle(.iconOnly)
+                        }
+                    }
+                    .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                        if viewModel.isFavoriteUser(user) {
+                            Button(role: .destructive) {
+                                viewModel.deleteFavorites(user: user)
+                            } label: {
+                                Label("", systemImage: "trash")
+                                    .labelStyle(.iconOnly)
+                            }
+                        }
+                        
+                    }
             }
         }
+        .listStyle(.plain)
+        .environment(\.defaultMinListRowHeight, 0)
     }
 }
 

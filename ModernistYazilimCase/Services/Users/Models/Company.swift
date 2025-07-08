@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct Company: Hashable{
+struct Company: Hashable, Codable{
     let name: String
     let catchPhrase: String
     let bs: String

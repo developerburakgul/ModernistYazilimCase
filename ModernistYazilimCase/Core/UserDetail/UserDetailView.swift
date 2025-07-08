@@ -11,6 +11,20 @@ struct UserDetailView: View {
     @StateObject var viewModel: UserDetailViewModel
     var body: some View {
         mainContent
+            .toolbar {
+                Button {
+                     viewModel.toggleFavorite()
+                 } label: {
+                     Image(systemName: viewModel.isFavorite ? "heart.fill" : "heart")
+                         .foregroundColor(viewModel.isFavorite ? .red : .gray)
+                         .frame(width: 40, height: 40)
+                         .background(Color(.systemBackground))
+                         .clipShape(Circle())
+                         .shadow(radius: 4, x: 2, y: 2)
+                 }
+                 .padding(.trailing, 8)
+                 .padding(.bottom, 4)
+            }
     }
     
     @ViewBuilder
@@ -28,32 +42,16 @@ struct UserDetailView: View {
     }
     
     private func makeView(from user: User) -> some View {
-        ZStack(alignment: .topTrailing) {
-            ScrollView {
-                VStack(alignment: .center, spacing: 10) {
-                    mapView(user: user)
-                    cirleImageAndNameView(user: user)
-                    contactInformationView(user: user)
-                    addressView(user: user)
-                    Spacer()
-                }
+        ScrollView {
+            VStack(alignment: .center, spacing: 10) {
+                mapView(user: user)
+                cirleImageAndNameView(user: user)
+                contactInformationView(user: user)
+                addressView(user: user)
+                Spacer()
             }
-            .ignoresSafeArea(edges: .top)
-            
-            Button {
-                 viewModel.toggleFavorite()
-             } label: {
-                 Image(systemName: viewModel.isFavorite ? "heart.fill" : "heart")
-                     .foregroundColor(viewModel.isFavorite ? .red : .gray)
-                     .frame(width: 44, height: 44)
-                     .background(Color(.systemBackground))
-                     .clipShape(Circle())
-                     .shadow(radius: 4, x: 2, y: 2)
-             }
-             .padding(.trailing, 16)
-             .padding(.top, 16)
-             .zIndex(1)
         }
+        .ignoresSafeArea(edges: .top)
     }
     
     private func mapView(user: User) -> some View {
@@ -154,5 +152,10 @@ struct UserDetailView: View {
 
 #Preview {
     let container = DevPreview.shared.container
-    UserDetailView(viewModel: ViewModelFactory(container: container).makeUserDetailViewModel(user: User.mock()))
+    NavigationStack {
+        UserDetailView(viewModel: ViewModelFactory(container: container).makeUserDetailViewModel(user: User.mock()))
+            .toolbarBackgroundVisibility(.hidden, for: .navigationBar)
+    }
+    
+    
 }

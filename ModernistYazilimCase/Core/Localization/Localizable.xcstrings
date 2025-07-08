@@ -1,6 +1,33 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
+    "Address" : {
+
+    },
+    "Business" : {
+
+    },
+    "Catch Phrase" : {
+
+    },
+    "City" : {
+
+    },
+    "Company" : {
+
+    },
+    "Contact Information" : {
+
+    },
+    "Email" : {
+
+    },
+    "Enter name for search..." : {
+
+    },
     "favorites" : {
 
     },
@@ -10,7 +37,25 @@
     "Hello, World!" : {
 
     },
+    "Name" : {
+
+    },
+    "Phone" : {
+
+    },
+    "Street" : {
+
+    },
+    "Suite" : {
+
+    },
     "users" : {
+
+    },
+    "Website" : {
+
+    },
+    "Zipcode" : {
 
     }
   },

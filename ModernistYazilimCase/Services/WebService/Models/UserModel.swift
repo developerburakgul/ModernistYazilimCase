@@ -25,7 +25,8 @@ extension UserModel {
             address: self.address.convertToAddress(),
             phone: self.phone,
             website: self.website,
-            company: self.company.convertToCompany()
+            company: self.company.convertToCompany(),
+            isFavorite: false
         )
     }
 }
