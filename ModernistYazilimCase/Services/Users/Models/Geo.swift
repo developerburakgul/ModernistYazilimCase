@@ -7,7 +7,7 @@
 
 import Foundation
 import MapKit
-struct Geo {
+struct Geo: Hashable {
     let lat: String
     let lng: String
     

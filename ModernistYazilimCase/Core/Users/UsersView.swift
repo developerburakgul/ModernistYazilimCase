@@ -9,6 +9,7 @@ import SwiftUI
 
 struct UsersView: View {
     @StateObject var viewModel: UsersViewModel
+    @EnvironmentObject var container: DependencyContainer
     @State var searchQuery: String = ""
     var body: some View {
         NavigationStack {
@@ -24,6 +25,11 @@ struct UsersView: View {
                 )
                 .onChange(of: searchQuery) { oldValue, newValue in
                     viewModel.userDidSearch(searchQuery)
+                }
+                .navigationDestination(item: $viewModel.selectedUser) { user in
+                    let viewModelFactory = ViewModelFactory(container: container)
+                    UserDetailView(viewModel: viewModelFactory.makeUserDetailViewModel(user: user))
+
                 }
         }
     }
@@ -47,6 +53,9 @@ struct UsersView: View {
             ForEach(users, id: \.id) { user in
                 UserCellView(user: user)
                     .padding(4)
+                    .onTapGesture {
+                        viewModel.selectedUser = user
+                    }
             }
         }
     }
@@ -54,9 +63,11 @@ struct UsersView: View {
 
 #Preview {
     let container = DevPreview.shared.container
+    let viewModelFactory = ViewModelFactory(container: container)
     UsersView(
         viewModel:
-            ViewModelFactory(container: container)
+            viewModelFactory
             .makeUsersViewModel()
     )
+    .previewEnvironment()
 }

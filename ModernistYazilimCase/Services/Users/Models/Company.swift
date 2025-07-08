@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct Company {
+struct Company: Hashable{
     let name: String
     let catchPhrase: String
     let bs: String

@@ -13,6 +13,7 @@ final class UsersViewModel: ObservableObject {
     private let interactor: UsersInteractorProtocol
     
     @Published private(set) var state: LoadingState<[User]> = .idle
+    @Published var selectedUser: User?
     var users: [User] = []
     
     init(interactor: UsersInteractorProtocol) {
