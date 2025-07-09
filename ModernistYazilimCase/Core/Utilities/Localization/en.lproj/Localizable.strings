@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  ModernistYazilimCase
+
+  Created by Burak Gül on 9.07.2025.
+  
+*/
+"Address" = "Address";
+"App Settings" = "App Settings";
+"Business" = "Business";
+"Catch Phrase" = "Catch Phrase";
+"City" = "City";
+"Company" = "Company";
+"Contact Information" = "Contact Information";
+"Couldn't find favorite user" = "Couldn't find favorite user";
+"Email" = "Email";
+"Enter name for search..." = "Enter name for search...";
+"favorites" = "favorites";
+"Favorites" = "Favorites";
+"Hello, world!" = "Hello, world!";
+"Language" = "Language";
+"Name" = "Name";
+"Phone" = "Phone";
+"Settings" = "Settings";
+"Street" = "Street";
+"Suite" = "Suite";
+"To see favorite users, search user on Users Tab and favorite them" = "To see favorite users, search user on Users Tab and favorite them";
+"users" = "users";
+"Website" = "Website";
+"Zipcode" = "Zipcode";
