@@ -10,9 +10,11 @@ import Foundation
 @MainActor
 protocol UsersInteractorProtocol {
     func fetchUsers() async throws -> [User]
-    func addFavoriteUser(_ user: User)
-    func deleteFavoriteUser(_ user: User)
+    func addFavoriteUser(_ user: User) throws
+    func removeFavoriteUser(_ user: User) throws
+    func isFavoriteUser(_ user: User)  throws -> Bool
 }
 
 extension CoreInteractor: UsersInteractorProtocol {}
+
 

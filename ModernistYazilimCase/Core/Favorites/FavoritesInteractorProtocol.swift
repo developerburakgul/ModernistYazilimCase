@@ -8,7 +8,8 @@ import Foundation
 
 @MainActor
 protocol FavoritesInteractorProtocol {
-    
+    func fetchFavoriteUsers() throws -> [User]
+    func removeFavoriteUser(_ user: User)  throws
 }
 
 extension CoreInteractor: FavoritesInteractorProtocol {}

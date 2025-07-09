@@ -20,18 +20,7 @@ struct User: Hashable {
 }
 
 extension User {
-    func convertToUserModel() -> UserModel {
-        return UserModel(
-            id: self.id,
-            name: self.name,
-            username: self.userName,
-            email: self.email,
-            address: self.address.convertToAddressModel(),
-            phone: self.phone,
-            website: self.website,
-            company: self.company.convertToCompanyModel()
-        )
-    }
+
     
     func convertToUserEntity() -> UserEntity {
         return UserEntity(from: self)

@@ -12,8 +12,10 @@ import Foundation
 struct CoreInteractor {
     //MARK: - TODO: Define Managers on Here
     private let userManager: UserManagerProtocol
+    private let favoritesManager: FavoritesManagerProtocol
     init(container: DependencyContainer) {
         self.userManager = container.resolve(UserManagerProtocol.self)!
+        self.favoritesManager = container.resolve(FavoritesManagerProtocol.self)!
     }
     
     //MARK: - USER MANAGER
@@ -21,12 +23,20 @@ struct CoreInteractor {
         try await userManager.fetchUsers()
     }
     
-    func addFavoriteUser(_ user: User) {
-            
+    func addFavoriteUser(_ user: User) throws {
+        try favoritesManager.addFavoriteUser(user)
     }
     
-    func deleteFavoriteUser(_ user: User) {
-        
+    func removeFavoriteUser(_ user: User) throws {
+        try favoritesManager.removeFavoriteUser(user)
+    }
+    
+    func fetchFavoriteUsers() throws -> [User] {
+        try favoritesManager.fetchFavoriteUsers()
+    }
+    
+    func isFavoriteUser(_ user: User) throws -> Bool {
+        try favoritesManager.isFavoriteUser(user)
     }
 }
 

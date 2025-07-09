@@ -18,7 +18,6 @@ struct Geo: Hashable, Codable {
         let latitude = lat.convertToCLLocationDegrees() ?? defaultLatitude
         let longitude = lng.convertToCLLocationDegrees() ?? defaultLongitude
         
-        // Dönüşüm başarısızsa konsola hata yazdır
         if lat.convertToCLLocationDegrees() == nil {
             print("Latitude conversion failed for: \(lat)")
         }
@@ -30,8 +29,3 @@ struct Geo: Hashable, Codable {
     }
 }
 
-extension Geo {
-    func convertToGeoModel() -> GeoModel {
-        return GeoModel(lat: lat, lng: lng)
-    }
-}

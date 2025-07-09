@@ -14,7 +14,7 @@ final class UsersViewModel: ObservableObject {
     
     @Published private(set) var state: LoadingState<[User]> = .idle
     @Published var selectedUser: User?
-    var users: [User] = []
+    private var originalUsers: [User] = []
     
     init(interactor: UsersInteractorProtocol) {
         self.interactor = interactor
@@ -24,10 +24,8 @@ final class UsersViewModel: ObservableObject {
         state = .loading
         do {
             let users = try await interactor.fetchUsers()
-            self.users = users
-            await MainActor.run {
-                state = .loaded(users)
-            }
+            originalUsers = users
+            state = .loaded(users)
         } catch  {
             //MARK: - TODO FOR ERROR
             let userError = UserError(title: "Error", description: error.localizedDescription)
@@ -35,26 +33,40 @@ final class UsersViewModel: ObservableObject {
             state = .failed(userError)
         }
     }
-    
+        
     func userDidSearch(_ text: String) {
         guard !text.isEmpty else {
-            state = .loaded(users)
+            state = .loaded(originalUsers)
             return
         }
-        state = .loading
-        let filteredUsers = users.filter { $0.name.lowercased().contains(text.lowercased()) }
-        state = .loaded(filteredUsers)
+        let filtered = originalUsers.filter { $0.name.lowercased().contains(text.lowercased()) }
+        state = .loaded(filtered)
     }
     
     func addFavorites(user: User) {
-        interactor.addFavoriteUser(user)
+        do {
+            try interactor.addFavoriteUser(user)
+//            state = .loaded(users)
+        } catch  {
+            //MARK: - TODO
+        }
+        
     }
     
     func deleteFavorites(user: User) {
-        interactor.deleteFavoriteUser(user)
+        do {
+            try interactor.removeFavoriteUser(user)
+//            state = .loaded(users)
+        } catch  {
+            //MARK: - TODO
+        }
     }
     
     func isFavoriteUser(_ user: User) -> Bool {
-        Bool.random()
+        do {
+            return try interactor.isFavoriteUser(user)
+        } catch{
+            return false
+        }
     }
 }

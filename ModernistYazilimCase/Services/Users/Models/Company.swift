@@ -12,8 +12,3 @@ struct Company: Hashable, Codable{
     let bs: String
 }
 
-extension Company {
-    func convertToCompanyModel() -> CompanyModel {
-        return CompanyModel(name: name, catchPhrase: catchPhrase, bs: bs)
-    }
-}

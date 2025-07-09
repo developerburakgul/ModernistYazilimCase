@@ -12,18 +12,7 @@ struct UserDetailView: View {
     var body: some View {
         mainContent
             .toolbar {
-                Button {
-                     viewModel.toggleFavorite()
-                 } label: {
-                     Image(systemName: viewModel.isFavorite ? "heart.fill" : "heart")
-                         .foregroundColor(viewModel.isFavorite ? .red : .gray)
-                         .frame(width: 40, height: 40)
-                         .background(Color(.systemBackground))
-                         .clipShape(Circle())
-                         .shadow(radius: 4, x: 2, y: 2)
-                 }
-                 .padding(.trailing, 8)
-                 .padding(.bottom, 4)
+                favoriteButton()
             }
     }
     
@@ -52,6 +41,21 @@ struct UserDetailView: View {
             }
         }
         .ignoresSafeArea(edges: .top)
+    }
+    
+    private func favoriteButton() -> some View {
+        Button {
+             viewModel.toggleFavorite()
+         } label: {
+             Image(systemName: viewModel.isFavorite ? "heart.fill" : "heart")
+                 .foregroundColor(viewModel.isFavorite ? .red : .gray)
+                 .frame(width: 40, height: 40)
+                 .background(Color(.systemBackground))
+                 .clipShape(Circle())
+                 .shadow(radius: 4, x: 2, y: 2)
+         }
+         .padding(.trailing, 8)
+         .padding(.bottom, 4)
     }
     
     private func mapView(user: User) -> some View {

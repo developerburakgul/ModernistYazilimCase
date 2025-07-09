@@ -8,7 +8,8 @@
 
 @MainActor
 protocol UserDetailInteractorProtocol {
-    
+    func addFavoriteUser(_ user: User) throws
+    func removeFavoriteUser(_ user: User) throws
 }
 
 extension CoreInteractor: UserDetailInteractorProtocol {}

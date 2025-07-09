@@ -13,9 +13,3 @@ struct Address: Hashable, Codable {
     let zipcode: String
     let geo: Geo
 }
-
-extension Address {
-    func convertToAddressModel() -> AddressModel {
-        return AddressModel(street: street, suite: suite, city: city, zipcode: zipcode, geo: geo.convertToGeoModel())
-    }
-}

@@ -20,10 +20,21 @@ final class UserDetailViewModel: ObservableObject {
         self.interactor = interactor
         self.user = user
         self.state = .loaded(user)
+        self.isFavorite = user.isFavorite
     }
     
     func toggleFavorite() {
         isFavorite.toggle()
+        do {
+            if isFavorite {
+                try interactor.addFavoriteUser(user)
+            } else {
+                try interactor.removeFavoriteUser(user)
+            }
+        } catch  {
+            
+        }
+        
     }
 
 }

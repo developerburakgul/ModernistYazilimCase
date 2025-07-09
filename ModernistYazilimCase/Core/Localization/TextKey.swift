@@ -25,6 +25,7 @@ enum TextKey: LocalizedStringResource {
     case catchPhrase = "Catch Phrase"
     case business = "Business"
     case company = "Company"
+    case favoritesTitle = "Favorites"
     
     var stringValue: String {
         return self.rawValue.stringValue

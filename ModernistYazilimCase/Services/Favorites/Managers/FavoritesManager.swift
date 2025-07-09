@@ -28,11 +28,24 @@ final class FavoritesManager: ObservableObject, FavoritesManagerProtocol {
     }
     
     func removeFavoriteUser(_ user: User)  throws {
-        try persistence.removeFavorites(userEntity: user.convertToUserEntity())
+        
+        try persistence.removeFavorites(user: user)
     }
     
     func addFavoriteUser(_ user: User)  throws {
-        try persistence.addFavorites(userEntity: user.convertToUserEntity())
+        let entity = UserEntity(
+            userID: user.id,
+            name: user.name,
+            userName: user.userName,
+            email: user.email,
+            address: user.address,
+            phone: user.phone,
+            website: user.website,
+            company: user.company,
+            isFavorite: true
+        )
+        
+        try persistence.addFavorites(userEntity: entity)
     }
     
     func isFavoriteUser(_ user: User)  throws -> Bool {

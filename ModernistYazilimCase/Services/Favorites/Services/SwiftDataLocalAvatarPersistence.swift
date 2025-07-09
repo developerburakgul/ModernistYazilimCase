@@ -10,7 +10,7 @@ import SwiftData
 @MainActor
 protocol FavoritesPersistenceProtocol {
     func addFavorites(userEntity: UserEntity) throws
-    func removeFavorites(userEntity: UserEntity) throws
+    func removeFavorites(user: User) throws
     func fetchFavoriteUserEntities() throws  -> [UserEntity]
 }
 
@@ -33,9 +33,16 @@ struct SwiftDataFavoritesPersistence: FavoritesPersistenceProtocol {
         try mainContext.save()
     }
     
-    func removeFavorites(userEntity: UserEntity) throws {
-        mainContext.delete(userEntity)
-        try mainContext.save()
+    func removeFavorites(user: User) throws {
+        let userEntities = try fetchFavoriteUserEntities()
+        let userEntity = userEntities.first(where: { $0.userID == user.id })
+        if userEntity != nil {
+            mainContext.delete(userEntity!)
+            try mainContext.save()
+        } else {
+            throw SwiftDataError.backwardMigration
+        }
+        
     }
     
     func fetchFavoriteUserEntities() throws  -> [UserEntity] {

@@ -40,7 +40,7 @@ class UserEntity {
         self.phone = user.phone
         self.website = user.website
         self.company = user.company
-        self.isFavorite = false
+        self.isFavorite = user.isFavorite
     }
     
     init(
