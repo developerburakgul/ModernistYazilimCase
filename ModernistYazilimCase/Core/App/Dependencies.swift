@@ -16,6 +16,7 @@ struct Dependencies {
     let webService: MBWebServiceProtocol
     let favoritesManager: FavoritesManagerProtocol
     let favoritesPersistenceService: FavoritesPersistenceProtocol
+    let languageManager: LanguageManagerProtocol
     
     init() {
         let container = DependencyContainer()
@@ -30,6 +31,9 @@ struct Dependencies {
         
         self.favoritesManager = FavoritesManager(favoritesPersistenceService: favoritesPersistenceService)
         container.register(FavoritesManagerProtocol.self, service: favoritesManager)
+        
+        self.languageManager = LanguageManager()
+        container.register(LanguageManagerProtocol.self, service: languageManager)
         
         self.container = container
     }

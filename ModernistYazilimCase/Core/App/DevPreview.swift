@@ -20,18 +20,21 @@ class DevPreview {
         container.register(UserManagerProtocol.self, service: userManager)
         container.register(FavoritesPersistenceProtocol.self, service: favoritesPersistenceService)
         container.register(FavoritesManagerProtocol.self, service: favoritesManager)
+        container.register(LanguageManagerProtocol.self, service: languageManager)
         return container
     }
     let webService: MBWebServiceProtocol
     let userManager: UserManagerProtocol
     let favoritesPersistenceService: FavoritesPersistenceProtocol
     let favoritesManager: FavoritesManagerProtocol
+    let languageManager: LanguageManagerProtocol
     
     init(){
         self.webService = MBWebService.shared
         self.userManager = MockUserManager(webService: webService)
         self.favoritesPersistenceService = SwiftDataFavoritesPersistence()
         self.favoritesManager = FavoritesManager(favoritesPersistenceService: favoritesPersistenceService)
+        self.languageManager = LanguageManager()
     }
 }
 

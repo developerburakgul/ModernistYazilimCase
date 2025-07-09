@@ -26,6 +26,11 @@ enum TextKey: LocalizedStringResource {
     case business = "Business"
     case company = "Company"
     case favoritesTitle = "Favorites"
+    case couldntFindFavoritesDescription = "To see favorite users, search user on Users Tab and favorite them"
+    case couldntFindFavoritesTitle = "Couldn't find favorite user"
+    case settingsTitle = "Settings"
+    case appSettings = "App Settings"
+    case language = "Language"
     
     var stringValue: String {
         return self.rawValue.stringValue

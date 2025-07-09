@@ -19,7 +19,7 @@
 		23932A6D2E1C58C900D9E033 /* Exceptions for "ModernistYazilimCase" folder in "ModernistYazilimCase" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Services/Users/Models/Mocks/MockUsers.json,
+				ServicesAndManagers/Users/Models/Mocks/MockUsers.json,
 			);
 			target = 23F5ADDC2E169D6E00DC6DFA /* ModernistYazilimCase */;
 		};
@@ -30,7 +30,7 @@
 			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
 			buildPhase = 23F5ADD92E169D6E00DC6DFA /* Sources */;
 			membershipExceptions = (
-				Services/Users/Models/Mocks/MockUsers.json,
+				ServicesAndManagers/Users/Models/Mocks/MockUsers.json,
 			);
 		};
 /* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
@@ -124,6 +124,7 @@
 			knownRegions = (
 				en,
 				Base,
+				tr,
 			);
 			mainGroup = 23F5ADD42E169D6E00DC6DFA;
 			minimizedProjectReferenceProxies = 1;

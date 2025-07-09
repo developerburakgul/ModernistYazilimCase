@@ -17,7 +17,7 @@ struct FavoritesView: View {
                 .task{
                     await viewModel.loadData()
                 }
-                .navigationTitle(TextKey.favoritesTitle.stringValue.uppercased())
+                .navigationTitle(TextKey.favoritesTitle.stringValue.capitalized)
                 .navigationDestination(item: $viewModel.selectedUser) { user in
                     let viewModelFactory = ViewModelFactory(container: container)
                     UserDetailView(viewModel: viewModelFactory.makeUserDetailViewModel(user: user))
@@ -74,9 +74,9 @@ struct FavoritesView: View {
     
     func makeEmptyView() -> some View {
         ContentUnavailableView(
-            "Couldn't find favorite user",
+            TextKey.couldntFindFavoritesTitle.stringValue,
             systemImage: "magnifyingglass",
-            description: Text(verbatim: "To see favorite users, search user on Users Tab and favorite them")
+            description: Text(TextKey.couldntFindFavoritesDescription.stringValue)
         )
     }
 }

@@ -18,7 +18,7 @@ struct UsersView: View {
                 .task{
                     await viewModel.loadData()
                 }
-                .navigationTitle(TextKey.users.stringValue.uppercased())
+                .navigationTitle(TextKey.users.stringValue.capitalized)
                 .searchable(
                     text: $searchQuery,
                     placement: .navigationBarDrawer(displayMode: .automatic),
@@ -32,6 +32,19 @@ struct UsersView: View {
                     UserDetailView(viewModel: viewModelFactory.makeUserDetailViewModel(user: user))
                         .toolbarVisibility(.hidden, for: .tabBar)
                         .toolbarBackgroundVisibility(.hidden, for: .navigationBar)
+                }
+                .sheet(isPresented: $viewModel.shouldGoToSettings){
+                    let viewModelFactory = ViewModelFactory(container: container)
+                    SettingsView(viewModel: viewModelFactory.makeSettingsViewModel())
+//                        .presentationDetents([.fraction(0.5)])
+                }
+                .toolbar {
+                    Button {
+                        viewModel.clickSettingsButton()
+                    } label: {
+                        Image(systemName: "gear")
+                            .foregroundStyle(UIColor.label.toColor)
+                    }
                 }
         }
     }
@@ -50,7 +63,7 @@ struct UsersView: View {
         }
     }
     
-    func makeView(from users: [User]) -> some View {
+    private func makeView(from users: [User]) -> some View {
         List {
             ForEach(users, id: \.id) { user in
                 UserCellView(user: user)
@@ -85,6 +98,8 @@ struct UsersView: View {
         .listStyle(.plain)
         .environment(\.defaultMinListRowHeight, 0)
     }
+    
+ 
 }
 
 #Preview {

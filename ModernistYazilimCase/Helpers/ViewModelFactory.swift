@@ -13,6 +13,7 @@ protocol ViewModelFactoryProtocol {
     func makeUsersViewModel() -> UsersViewModel
     func makeFavoritesViewModel() -> FavoritesViewModel
     func makeUserDetailViewModel(user: User) -> UserDetailViewModel
+    func makeSettingsViewModel() -> SettingsViewModel
 }
 
 @MainActor
@@ -31,4 +32,10 @@ struct ViewModelFactory: ViewModelFactoryProtocol {
     func makeUserDetailViewModel(user: User) -> UserDetailViewModel {
         UserDetailViewModel(interactor: coreInteractor as UserDetailInteractorProtocol, user: user)
     }
+    
+    func makeSettingsViewModel() -> SettingsViewModel {
+        SettingsViewModel(interactor: coreInteractor as SettingsInteractorProtocol)
+    }
+    
+    
 }

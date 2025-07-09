@@ -14,6 +14,7 @@ final class UsersViewModel: ObservableObject {
     
     @Published private(set) var state: LoadingState<[User]> = .idle
     @Published var selectedUser: User?
+    @Published var shouldGoToSettings: Bool = false
     private var originalUsers: [User] = []
     
     init(interactor: UsersInteractorProtocol) {
@@ -54,12 +55,17 @@ final class UsersViewModel: ObservableObject {
     }
     
     func deleteFavorites(user: User) {
-        do {
-            try interactor.removeFavoriteUser(user)
-//            state = .loaded(users)
-        } catch  {
-            //MARK: - TODO
+        state = .loading
+        Task {
+            do {
+                try interactor.removeFavoriteUser(user)
+                originalUsers = try  await interactor.fetchUsers()
+                state = .loaded(originalUsers)
+            } catch  {
+                //MARK: - TODO
+            }
         }
+       
     }
     
     func isFavoriteUser(_ user: User) -> Bool {
@@ -68,5 +74,9 @@ final class UsersViewModel: ObservableObject {
         } catch{
             return false
         }
+    }
+    
+    func clickSettingsButton() {
+        shouldGoToSettings = true
     }
 }

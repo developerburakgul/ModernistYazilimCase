@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  ModernistYazilimCase
+
+  Created by Burak Gül on 9.07.2025.
+  
+*/
+"Address" = "Adres";
+"App Settings" = "Uygulama Ayarları";
+"Business" = "İş";
+"Catch Phrase" = "Catch Phrase";
+"City" = "Şehir";
+"Company" = "Şirket";
+"Contact Information" = "İletişim bilgileri";
+"Couldn't find favorite user" = "Favori Kullanıcılar Bulunamadı";
+"Email" = "Email";
+"Enter name for search..." = "Aramak İçin İsim Giriniz…";
+"favorites" = "Favoriler";
+"Favorites" = "Favoriler";
+"Hello, world!" = "Merhaba Dünya";
+"Language" = "Dil";
+"Name" = "İsim";
+"Phone" = "Telefon Numarası";
+"Settings" = "Ayarlar";
+"Street" = "Cadde";
+"Suite" = "Suit";
+"To see favorite users, search user on Users Tab and favorite them" = "Favori Kullanıcıları Görmek İçin Kullanıcılar Sekmesinde Arayın Ve Onları Ekleyin";
+"users" = "Kullanıcılar";
+"Website" = "Web Sitesi";
+"Zipcode" = "Zip Kodu";

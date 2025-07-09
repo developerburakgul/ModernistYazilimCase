@@ -13,9 +13,11 @@ struct CoreInteractor {
     //MARK: - TODO: Define Managers on Here
     private let userManager: UserManagerProtocol
     private let favoritesManager: FavoritesManagerProtocol
+    private let languageManager: LanguageManagerProtocol
     init(container: DependencyContainer) {
         self.userManager = container.resolve(UserManagerProtocol.self)!
         self.favoritesManager = container.resolve(FavoritesManagerProtocol.self)!
+        self.languageManager = container.resolve(LanguageManagerProtocol.self)!
     }
     
     //MARK: - USER MANAGER
@@ -23,6 +25,7 @@ struct CoreInteractor {
         try await userManager.fetchUsers()
     }
     
+    //MARK: - FAVORITES MANAGER
     func addFavoriteUser(_ user: User) throws {
         try favoritesManager.addFavoriteUser(user)
     }
@@ -37,6 +40,14 @@ struct CoreInteractor {
     
     func isFavoriteUser(_ user: User) throws -> Bool {
         try favoritesManager.isFavoriteUser(user)
+    }
+    
+    //MARK: - LOCALIZATION MANAGER
+    func setLanguage(_ language: Language) {
+        languageManager.setLanguage(language)
+    }
+    func getLanguage() -> Language {
+        languageManager.getLanguage()
     }
 }
 
