@@ -12,17 +12,7 @@ struct UserCellView: View {
     
     var body: some View {
         HStack(spacing: 12) {
-            // Profil fotoğrafı placeholder
-            ZStack {
-                Circle()
-                    .fill(Color.blue.opacity(0.1))
-                    .frame(width: 50, height: 50)
-                
-                Text(user.name.prefix(1))
-                    .font(.title2)
-                    .fontWeight(.semibold)
-                    .foregroundColor(.blue)
-            }
+            ImageLoaderView(urlString: user.imageURLString, size: 50)
             
             VStack(alignment: .leading, spacing: 4) {
                 Text(user.name)

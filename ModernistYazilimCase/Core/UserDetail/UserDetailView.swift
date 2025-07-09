@@ -68,9 +68,8 @@ struct UserDetailView: View {
     }
     
     private func cirleImageAndNameView(user: User) -> some View {
-        VStack(spacing: 12) {
-            CircleImage(name: user.name)
-                .frame(width: 125, height: 125)
+        VStack(spacing: 12) {            
+            ImageLoaderView(urlString: user.imageURLString, size: 125)
                 .overlay(
                     Circle()
                         .stroke(Color(.systemBackground), lineWidth: 4)

@@ -17,6 +17,10 @@ struct User: Hashable {
     let website: String
     let company: Company
     let isFavorite: Bool
+    
+    var imageURLString: String {
+        "\(Constants.imageBaseURL)\(id)"
+    }
 }
 
 extension User {
