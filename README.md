@@ -1,6 +1,16 @@
 # Modernist Case
 
-A simple iOS application built with modern Swift technologies and best practices.
+A simple iOS application built with modern ## Features
+
+- Built with **SwiftUI** for the user interface.
+- Uses **MVVM + Interactor** architecture for clear separation of concerns.
+- Custom **Dependency Injection** container inspired by Swinject.
+- **Unit tests** written with SwiftTesting.
+- **SwiftData** used for local data persistence.
+- Networking powered by a custom SPM package: **MBWebService** (`development` branch).
+- **Localization support** via a centralized `languageManager`, allowing easy language changes from any ViewModel and keeping localization logic scalable and testable.
+
+---Swift technologies and best practices.
 
 ## Getting Started
 
