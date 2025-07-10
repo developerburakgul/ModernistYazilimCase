@@ -10,7 +10,6 @@ A simple iOS application built with modern ## Features
 - Networking powered by a custom SPM package: **MBWebService** (`development` branch).
 - **Localization support** via a centralized `languageManager`, allowing easy language changes from any ViewModel and keeping localization logic scalable and testable.
 
----Swift technologies and best practices.
 
 ## Getting Started
 
@@ -35,7 +34,7 @@ A simple iOS application built with modern ## Features
 
 ## Architecture
 
-![Architecture Diagram](architecture/diagram.png)
+![Architecture Diagram](https://github.com/developerburakgul/ModernistYazilimCase/blob/main/screenshots/Architecture.jpg)
 
 The project follows the **MVVM + Interactor** pattern for scalability and testability.
 
