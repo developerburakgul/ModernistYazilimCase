@@ -42,6 +42,7 @@ struct CoreInteractor {
         try favoritesManager.isFavoriteUser(user)
     }
     
+    
     //MARK: - LOCALIZATION MANAGER
     func setLanguage(_ language: Language) {
         languageManager.setLanguage(language)
