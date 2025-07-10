@@ -2,6 +2,15 @@
 
 A simple iOS application built with modern Swift technologies and best practices.
 
+## Getting Started
+
+1. Clone the repository.
+2. Open the project in Xcode.
+3. Run `swift package resolve` if needed.
+4. Build and run on your preferred simulator or device.
+
+---
+
 ## Features
 
 - Built with **SwiftUI** for the user interface.
@@ -13,16 +22,6 @@ A simple iOS application built with modern Swift technologies and best practices
 
 ---
 
-## Screenshots
-
-| Home Screen | Detail Screen |
-|-------------|--------------|
-| ![Home](screenshots/home.png) | ![Detail](screenshots/detail.png) |
-
-_Add more screenshots as needed._
-
-
----
 
 ## Architecture
 
@@ -184,27 +183,19 @@ This approach allows you to inject any implementation of `MBWebServiceProtocol` 
 
 ---
 
-## Getting Started
+## Screenshots
 
-1. Clone the repository.
-2. Open the project in Xcode.
-3. Run `swift package resolve` if needed.
-4. Build and run on your preferred simulator or device.
+| Users Screen | Empty Favorites Screen | Users Screen | Users Search | Users Screen - Can Add Favorites |
+|-------------|---------------|-------------|---------------| ---------------|
+| ![Home](https://github.com/developerburakgul/ModernistYazilimCase/blob/main/screenshots/users.png) | ![Home](https://github.com/developerburakgul/ModernistYazilimCase/blob/main/screenshots/favorites-empty.png) | ![Home](https://github.com/developerburakgul/ModernistYazilimCase/blob/main/screenshots/users.png) | ![Detail](https://github.com/developerburakgul/ModernistYazilimCase/blob/main/screenshots/users-search.png) | ![Detail](https://github.com/developerburakgul/ModernistYazilimCase/blob/main/screenshots/users-can-add-favorite.png) |
 
----
 
-## Requirements
+ | User Detail Screen | User Detail Screen - Add Favorites | Users Screen - Can Delete Favorites | Favorites Screen  | Favorites Screen - Can Delete |
+|-------------|---------------|-------------|---------------| ---------------|
+| ![Detail](https://github.com/developerburakgul/ModernistYazilimCase/blob/main/screenshots/userDetail-noFavorite.png) | ![Detail](https://github.com/developerburakgul/ModernistYazilimCase/blob/main/screenshots/userDetail-addFavorite.png) |  ![Detail](https://github.com/developerburakgul/ModernistYazilimCase/blob/main/screenshots/users-can-delete-favorite.png) |  ![Detail](https://github.com/developerburakgul/ModernistYazilimCase/blob/main/screenshots/favorites-non-empty.png) |   ![Detail](https://github.com/developerburakgul/ModernistYazilimCase/blob/main/screenshots/favorites-can-delete.png) | 
 
-- iOS 16.0+
-- Xcode 15+
-- Swift 5.9+
-
----
-
-## License
-
-MIT
+ | Settings Screen | Settings Screen - Select Language | |  |  |
+|-------------|---------------| ---------------| ---------------| ---------------|
+| ![Detail](https://github.com/developerburakgul/ModernistYazilimCase/blob/main/screenshots/settings-english.png) | ![Detail](https://github.com/developerburakgul/ModernistYazilimCase/blob/main/screenshots/settings-select-langugae.png) |  ![Detail](https://github.com/developerburakgul/ModernistYazilimCase/blob/main/screenshots/settings-select-langugae.png) |  ![Detail](https://github.com/developerburakgul/ModernistYazilimCase/blob/main/screenshots/settings-select-langugae.png) |  ![Detail](https://github.com/developerburakgul/ModernistYazilimCase/blob/main/screenshots/settings-select-langugae.png) | 
 
 ---
-
-> _Feel free to update screenshots, video links, and architecture diagram as your project evolves._
