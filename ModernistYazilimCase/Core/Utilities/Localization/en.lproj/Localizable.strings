@@ -28,3 +28,5 @@
 "users" = "users";
 "Website" = "Website";
 "Zipcode" = "Zipcode";
+"Error" = "Error"
+"Something went wrong" = "Something went wrong, Try Again."

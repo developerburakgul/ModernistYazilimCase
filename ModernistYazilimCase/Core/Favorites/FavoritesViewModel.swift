@@ -28,10 +28,7 @@ final class FavoritesViewModel: ObservableObject {
                 state = .loaded(users)
             }
         } catch  {
-            //MARK: - TODO FOR ERROR
-            let userError = UserError(title: "Error", description: error.localizedDescription)
-            dump(error)
-            state = .failed(userError)
+            state = .failed(UserError(title: TextKey.error.stringValue.capitalized, description: TextKey.errorDescription.stringValue.capitalized))
         }
     }
     
@@ -39,7 +36,7 @@ final class FavoritesViewModel: ObservableObject {
         do {
             try interactor.removeFavoriteUser(user)
         } catch  {
-            //MARK: - TODO
+            state = .failed(UserError(title: TextKey.error.stringValue.capitalized, description: TextKey.errorDescription.stringValue.capitalized))
         }
     }
     

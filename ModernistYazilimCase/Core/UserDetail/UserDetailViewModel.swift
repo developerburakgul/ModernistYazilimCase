@@ -29,7 +29,7 @@ final class UserDetailViewModel: ObservableObject {
             isFavorite = try interactor.isFavoriteUser(user)
             state = .loaded(user)
         } catch  {
-            
+            state = .failed(UserError(title: TextKey.error.stringValue.capitalized, description: TextKey.errorDescription.stringValue.capitalized))
         }
     }
     
@@ -42,9 +42,7 @@ final class UserDetailViewModel: ObservableObject {
                 try interactor.removeFavoriteUser(user)
             }
         } catch  {
-            
+            state = .failed(UserError(title: TextKey.error.stringValue.capitalized, description: TextKey.errorDescription.stringValue.capitalized))
         }
-        
     }
-
 }

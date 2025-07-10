@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 @MainActor
 final class UsersViewModel: ObservableObject {
     private let interactor: UsersInteractorProtocol
@@ -28,10 +27,7 @@ final class UsersViewModel: ObservableObject {
             originalUsers = users
             state = .loaded(users)
         } catch  {
-            //MARK: - TODO FOR ERROR
-            let userError = UserError(title: "Error", description: error.localizedDescription)
-            dump(error)
-            state = .failed(userError)
+            state = .failed(UserError(title: TextKey.error.stringValue.capitalized, description: TextKey.errorDescription.stringValue.capitalized))
         }
     }
         
@@ -47,9 +43,8 @@ final class UsersViewModel: ObservableObject {
     func addFavorites(user: User) {
         do {
             try interactor.addFavoriteUser(user)
-//            state = .loaded(users)
         } catch  {
-            //MARK: - TODO
+            state = .failed(UserError(title: TextKey.error.stringValue.capitalized, description: TextKey.errorDescription.stringValue.capitalized))
         }
         
     }
@@ -62,7 +57,7 @@ final class UsersViewModel: ObservableObject {
                 originalUsers = try  await interactor.fetchUsers()
                 state = .loaded(originalUsers)
             } catch  {
-                //MARK: - TODO
+                state = .failed(UserError(title: TextKey.error.stringValue.capitalized, description: TextKey.errorDescription.stringValue.capitalized))
             }
         }
        

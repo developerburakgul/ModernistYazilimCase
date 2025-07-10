@@ -31,6 +31,8 @@ enum TextKey: LocalizedStringResource {
     case settingsTitle = "Settings"
     case appSettings = "App Settings"
     case language = "Language"
+    case error = "Error"
+    case errorDescription = "Something went wrong"
     
     var stringValue: String {
         return self.rawValue.stringValue
