@@ -24,6 +24,11 @@ struct FavoritesView: View {
                         .toolbarVisibility(.hidden, for: .tabBar)
                         .toolbarBackgroundVisibility(.hidden, for: .navigationBar)
                 }
+                .onAppear {
+                    Task {
+                        await viewModel.loadData()
+                    }
+                }
         }
     }
     
