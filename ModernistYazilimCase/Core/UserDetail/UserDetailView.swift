@@ -11,6 +11,9 @@ struct UserDetailView: View {
     @StateObject var viewModel: UserDetailViewModel
     var body: some View {
         mainContent
+            .task{
+                await viewModel.loadData()
+            }
             .toolbar {
                 favoriteButton()
             }
@@ -97,28 +100,10 @@ struct UserDetailView: View {
                 .padding(.horizontal, 8)
             
             InfoRow(icon: "envelope.fill", title: TextKey.email.stringValue, value: user.email)
-                .onTapGesture {
-                    if let url = URL(string: "mailto:\(user.email)") {
-                        UIApplication.shared.open(url)
-                    }
-                }
-            
             InfoRow(icon: "phone.fill", title: TextKey.phone.stringValue, value: user.phone)
-                .onTapGesture {
-                    if let url = URL(string: "tel:\(user.phone.replacingOccurrences(of: " ", with: ""))") {
-                        UIApplication.shared.open(url)
-                    }
-                }
-            
             InfoRow(icon: "globe", title: TextKey.website.stringValue, value: user.website)
-                .onTapGesture {
-                    if let url = URL(string: "https://\(user.website)") {
-                        UIApplication.shared.open(url)
-                    }
-                }
         }
         .padding()
-
     }
     
     private func addressView(user: User) -> some View {

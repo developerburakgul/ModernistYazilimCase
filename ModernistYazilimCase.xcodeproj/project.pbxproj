@@ -11,7 +11,18 @@
 		2393411C2E1EBC6000D9E033 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2393411B2E1EBC6000D9E033 /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2393475A2E1F04AE00D9E033 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 23F5ADD52E169D6E00DC6DFA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23F5ADDC2E169D6E00DC6DFA;
+			remoteInfo = ModernistYazilimCase;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		239347562E1F04AE00D9E033 /* ModernistYazilimCaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModernistYazilimCaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F5ADDD2E169D6E00DC6DFA /* ModernistYazilimCase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModernistYazilimCase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -36,6 +47,11 @@
 /* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		239347572E1F04AE00D9E033 /* ModernistYazilimCaseTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ModernistYazilimCaseTests;
+			sourceTree = "<group>";
+		};
 		23F5ADDF2E169D6E00DC6DFA /* ModernistYazilimCase */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -48,6 +64,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		239347532E1F04AE00D9E033 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		23F5ADDA2E169D6E00DC6DFA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -64,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				23F5ADDF2E169D6E00DC6DFA /* ModernistYazilimCase */,
+				239347572E1F04AE00D9E033 /* ModernistYazilimCaseTests */,
 				23F5ADDE2E169D6E00DC6DFA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				23F5ADDD2E169D6E00DC6DFA /* ModernistYazilimCase.app */,
+				239347562E1F04AE00D9E033 /* ModernistYazilimCaseTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,6 +104,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		239347552E1F04AE00D9E033 /* ModernistYazilimCaseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2393475C2E1F04AE00D9E033 /* Build configuration list for PBXNativeTarget "ModernistYazilimCaseTests" */;
+			buildPhases = (
+				239347522E1F04AE00D9E033 /* Sources */,
+				239347532E1F04AE00D9E033 /* Frameworks */,
+				239347542E1F04AE00D9E033 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2393475B2E1F04AE00D9E033 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				239347572E1F04AE00D9E033 /* ModernistYazilimCaseTests */,
+			);
+			name = ModernistYazilimCaseTests;
+			packageProductDependencies = (
+			);
+			productName = ModernistYazilimCaseTests;
+			productReference = 239347562E1F04AE00D9E033 /* ModernistYazilimCaseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		23F5ADDC2E169D6E00DC6DFA /* ModernistYazilimCase */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 23F5ADEB2E169D7000DC6DFA /* Build configuration list for PBXNativeTarget "ModernistYazilimCase" */;
@@ -113,6 +161,10 @@
 				LastSwiftUpdateCheck = 1610;
 				LastUpgradeCheck = 1610;
 				TargetAttributes = {
+					239347552E1F04AE00D9E033 = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = 23F5ADDC2E169D6E00DC6DFA;
+					};
 					23F5ADDC2E169D6E00DC6DFA = {
 						CreatedOnToolsVersion = 16.1;
 					};
@@ -138,11 +190,19 @@
 			projectRoot = "";
 			targets = (
 				23F5ADDC2E169D6E00DC6DFA /* ModernistYazilimCase */,
+				239347552E1F04AE00D9E033 /* ModernistYazilimCaseTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		239347542E1F04AE00D9E033 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		23F5ADDB2E169D6E00DC6DFA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -153,6 +213,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		239347522E1F04AE00D9E033 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		23F5ADD92E169D6E00DC6DFA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -162,7 +229,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2393475B2E1F04AE00D9E033 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 23F5ADDC2E169D6E00DC6DFA /* ModernistYazilimCase */;
+			targetProxy = 2393475A2E1F04AE00D9E033 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		2393475D2E1F04AE00D9E033 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZBYGRL25JU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BurakGul.ModernistYazilimCaseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ModernistYazilimCase.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ModernistYazilimCase";
+			};
+			name = Debug;
+		};
+		2393475E2E1F04AE00D9E033 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZBYGRL25JU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BurakGul.ModernistYazilimCaseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ModernistYazilimCase.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ModernistYazilimCase";
+			};
+			name = Release;
+		};
 		23F5ADE92E169D7000DC6DFA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -345,6 +456,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2393475C2E1F04AE00D9E033 /* Build configuration list for PBXNativeTarget "ModernistYazilimCaseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2393475D2E1F04AE00D9E033 /* Debug */,
+				2393475E2E1F04AE00D9E033 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		23F5ADD82E169D6E00DC6DFA /* Build configuration list for PBXProject "ModernistYazilimCase" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

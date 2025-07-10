@@ -23,6 +23,16 @@ final class UserDetailViewModel: ObservableObject {
         self.isFavorite = user.isFavorite
     }
     
+    func loadData() async {
+        state = .loading
+        do {
+            isFavorite = try interactor.isFavoriteUser(user)
+            state = .loaded(user)
+        } catch  {
+            
+        }
+    }
+    
     func toggleFavorite() {
         isFavorite.toggle()
         do {
